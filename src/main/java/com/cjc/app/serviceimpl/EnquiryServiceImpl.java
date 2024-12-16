@@ -18,11 +18,8 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 	@Override
-	public Enquiry addData(Enquiry enquiry) {
-
-		Enquiry enq = enquiryRepository.save(enquiry);
-
-		return enq;
-
+	public Enquiry addEnquiry(Enquiry enquiry) {
+		Enquiry savedData = enquiryRepository.save(enquiry);
+		return savedData;
 	}
 }

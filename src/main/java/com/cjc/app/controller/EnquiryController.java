@@ -33,8 +33,8 @@ public class EnquiryController {
 	// patch -> Aman
 
 	@PostMapping(value = "/enquiries")
-	public ResponseEntity<Enquiry> addData(@RequestBody Enquiry enquiry) {
-		Enquiry enq = enquiryService.addData(enquiry);
+	public ResponseEntity<Enquiry> saveEnquiry(@RequestBody Enquiry enquiry) {
+		Enquiry enq = enquiryService.addEnquiry(enquiry);
 
 		return new ResponseEntity<Enquiry>(enq, HttpStatus.CREATED);
 	}
