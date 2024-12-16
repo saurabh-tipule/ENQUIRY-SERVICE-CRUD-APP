@@ -35,12 +35,9 @@ public class EnquiryController {
 	@DeleteMapping(value = "/enquiries/{customerID}")
 	public ResponseEntity<Void> deleteEnquiry(@PathVariable Integer customerID){
 		Boolean flag = enquiryService.deleteEnquiry(customerID);
-		
 		if(flag) {
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}
-		
 		return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 	}
-
 }

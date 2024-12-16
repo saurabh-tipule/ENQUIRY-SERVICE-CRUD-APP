@@ -19,15 +19,10 @@ public class EnquiryServiceImpl implements EnquiryService {
 
 	@Override
 	public Boolean deleteEnquiry(Integer customerID) {
-		
 		if(enquiryRepository.existsById(customerID)) {
-			
 			enquiryRepository.deleteById(customerID);
-			
-			return true;
-			
-		}
+		     return true;
+			}
 		return false;
 	}
-
 }
