@@ -35,28 +35,21 @@ public class EnquiryController {
 	// put -> Manjusha
 
 	// patch -> Aman
-	
-	
-	
-	
 
 	@GetMapping(value = "/enquiries")
-	public ResponseEntity<List<Enquiry>> getAllEnquiry()
-	{
-	  List<Enquiry> enquirylist= enquiryService.getAllEnquiry();
-	  
-	  if(enquirylist.isEmpty())
-	  {
-		  return new ResponseEntity<List<Enquiry>>(HttpStatus.NO_CONTENT);
-	  }
-	  return new ResponseEntity<List<Enquiry>>(enquirylist,HttpStatus.OK);
+	public ResponseEntity<List<Enquiry>> getAllEnquiry() {
+		List<Enquiry> enquirylist = enquiryService.getAllEnquiry();
+
+		if (enquirylist.isEmpty()) {
+			return new ResponseEntity<List<Enquiry>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Enquiry>>(enquirylist, HttpStatus.OK);
 	}
-	
-	@GetMapping(value = "/enquiries/{customerid}")
-	public ResponseEntity<Enquiry> getsingleEnquiry(@PathVariable Integer customerid)
-	{
-	   Enquiry enquiry = enquiryService.getsingleEnquiry(customerid);
-	   
-	   return new ResponseEntity<Enquiry>(enquiry,HttpStatus.OK);
+
+	@GetMapping(value = "/enquiries/{customerId}")
+	public ResponseEntity<Enquiry> getEnquiry(@PathVariable Integer customerId) {
+		Enquiry enquiry = enquiryService.getsingleEnquiry(customerId);
+
+		return new ResponseEntity<Enquiry>(enquiry, HttpStatus.OK);
 	}
 }

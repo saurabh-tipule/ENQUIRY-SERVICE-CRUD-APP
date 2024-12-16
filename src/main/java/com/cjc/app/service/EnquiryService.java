@@ -8,7 +8,7 @@ public interface EnquiryService {
 
 	List<Enquiry> getAllEnquiry();
 
-	Enquiry getsingleEnquiry(Integer customerid);
+	Enquiry getsingleEnquiry(Integer customerId);
 
 	
 

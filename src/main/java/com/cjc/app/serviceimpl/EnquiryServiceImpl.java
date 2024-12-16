@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigData.Option;
 import org.springframework.stereotype.Service;
 
 import com.cjc.app.model.Enquiry;
@@ -28,9 +27,9 @@ public class EnquiryServiceImpl implements EnquiryService {
 	}
 
 	@Override
-	public Enquiry getsingleEnquiry(Integer customerid) {
+	public Enquiry getsingleEnquiry(Integer customerId) {
 
-		Optional<Enquiry> id = enquiryRepository.findById(customerid);
+		Optional<Enquiry> id = enquiryRepository.findById(customerId);
 		if (id.isPresent()) {
 			return id.get();
 		}
