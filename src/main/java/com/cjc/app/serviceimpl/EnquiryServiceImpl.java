@@ -25,4 +25,10 @@ public class EnquiryServiceImpl implements EnquiryService {
 			}
 		return false;
 	}
+
+	@Override
+	public Enquiry addEnquiry(Enquiry enquiry) {
+		
+		return enquiryRepository.save(enquiry);
+	}
 }
